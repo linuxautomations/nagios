@@ -23,7 +23,7 @@ Stat() {
     fi
 }
 
-curl -x https://assets.nagios.com/downloads/nagiosxi/install.sh | bash
+curl -s https://assets.nagios.com/downloads/nagiosxi/install.sh | bash
 
 exit 
 VERSION=$(curl -s https://assets.nagios.com/downloads/nagiosxi/versions.php | html2text | grep tar.gz | awk -F '|' '{print $2}' | head -1 | awk -F '[(,)]' '{print $2}')
